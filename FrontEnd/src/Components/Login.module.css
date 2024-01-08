@@ -1,0 +1,235 @@
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.logoName {
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    text-transform: capitalize;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.topheader {
+  background-color: #292c31;
+  color: #fff;
+  padding: 5.2px;
+  margin: 0px;
+  text-align: center;
+}
+
+.loginContainer {
+  height: 100vh;
+  /* background-color: #eff1fe; */
+  background-color: #1F1D2B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.loginSecondContainer {
+  display: flex;
+  gap: 10px;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  background: #fff;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+}
+
+.registerAndLoginText {
+  text-align: end;
+  margin-top: 10px;
+  font-weight: 700;
+  /* color: rgb(25, 118, 210); */
+  color:black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rightSide {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftSide {
+  /* background: #ffbb40; */
+  background: #1F1D2B;
+  width: 50%;
+  font-size: 24px;
+  color: #ffbb40;
+  font-weight: 600;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 40px 40px 0;
+  overflow: hidden;
+}
+
+.leftSide > p {
+  text-align: center;
+  padding: 10px;
+}
+
+.formStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.formStyleBorder {
+  width:80%;
+}
+
+.formStyleTextField {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.PasswordStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 460px;
+  background-color: #f6f7ffb4;
+}
+
+.loginButton {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: #ffbb40;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.topContainer {
+  height: 120px;
+  /* background-color: #ffbb40; */
+  background-color: #1F1D2B;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+}
+
+.textInHeader {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+  padding-top: 20px;
+  font-weight: 600;
+}
+
+.logout {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  /* height: 250px; */
+  background-color: #fff;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.secondContainer {
+  /* background-color: #edecfe; */
+  background-color: #39394C;
+  min-height: 100vh; /* Use min-height instead of height */
+  overflow-y: auto;
+}
+
+.feedDescriptionRow {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 90px;
+}
+
+.feedBlock {
+  margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px 10px;
+  background-color: #1E1D2A;
+  border: 1px solid #58585899;
+    box-shadow: 0px 0px 10px #3a3a3a;
+}
+
+.deleteIcons {
+  cursor: pointer;
+  color:#ffbb40;
+}
+
+.deleteIcons:hover {
+  color: rgb(211, 47, 47);
+}
+
+.editIcons {
+  cursor: pointer;
+  font-size: 28px;
+  color:#ffbb40;
+}
+
+.feederTopHeader {
+  /* background-color: #ffbb40; */
+  background-color:#1F1D2B;
+  padding: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.feedModel {
+  padding: 10px;
+}
+
+.dataPickerButton {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.feedButtonModel {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.textareaStyle {
+  outline: none;
+  border: none;
+  /* border: 2px solid #ffbb40; */
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  max-width: 99%;
+  max-height: 50vh;
+  white-space: break-spaces;
+}

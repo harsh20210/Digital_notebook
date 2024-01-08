@@ -1,0 +1,4 @@
+export const LOGIN = "LOGIN";
+export const GET_DATA = "GET_DATA";
+export const ERROR_MESSAGE = "ERROR_MESSAGE"; 
+export const ERROR_MESSAGE_IN_REGISTER = "ERROR_MESSAGE_IN_REGISTER";
