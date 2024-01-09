@@ -6,21 +6,8 @@ import styleForFeedModel from "./Login.module.css";
 import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
 import { inserData } from "../Redux/action";
-import { InputAdornment, OutlinedInput, TextField } from "@mui/material";
-import EventIcon from "@mui/icons-material/Event";
-import FormControl from "@mui/material/FormControl";
 import moment from "moment";
-import { styled } from "@mui/material/styles";
 import dayjs from 'dayjs';
-
-const StyledTextField = styled(TextField)(() => ({
-  width: "150px",
-
-  "& div": {
-    fontSize: "13px",
-    height: "30px",
-  },
-}));
 
 export default function FeedModel({
   handleCloseModel,
@@ -93,9 +80,6 @@ export default function FeedModel({
                     helperText: 'MM/DD/YYYY',
                   },
                 }}
-                // renderInput={(params) => (
-                //   <StyledTextField {...params} style={{background:"#fff"}} disabled />
-                // )}
                 value={dateToDisplay !== null ? dayjs(dateToDisplay, 'MM/DD/YYYY') : null}
                 views={["year", "month", "day"]}
               />

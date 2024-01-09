@@ -16,6 +16,7 @@ import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import { useNavigate } from "react-router-dom";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const style = {
   position: "absolute",
@@ -50,10 +51,18 @@ const TextFieldData = ({ textData }) => {
           alignItems: "center",
           justifyContent: "space-between",
           position: "relative",
-          color:"#fff"
+          color: "#fff",
         }}
       >
-        <div style={open ? { display: "none" } : divStyle}>{textData}</div>
+        <div
+          className={
+            open
+              ? styleForFeed.displayNone
+              : styleForFeed.textDataBeforeCollapse
+          }
+        >
+          {textData}
+        </div>
         <div
           style={
             open
@@ -66,28 +75,23 @@ const TextFieldData = ({ textData }) => {
             size="small"
             onClick={() => setOpen(!open)}
           >
-            {open ? <KeyboardArrowUpIcon style={{color:"#fff"}} /> : <KeyboardArrowDownIcon style={{color:"#fff"}} />}
+            {open ? (
+              <KeyboardArrowUpIcon style={{ color: "#fff" }} />
+            ) : (
+              <KeyboardArrowDownIcon style={{ color: "#fff" }} />
+            )}
           </IconButton>
         </div>
       </div>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <div
-          style={{
-            width: `calc(100% - 5%)`,
-            textAlign: "left",
-            whiteSpace: "break-spaces",
-            color:"#fff"
-          }}
-        >
-          {textData}
-        </div>
+        <div className={styleForFeed.textFieldAftercollapse}>{textData}</div>
       </Collapse>
     </>
   );
 };
 
 export default function Feed() {
-  const { loginDetails, allData } = useSelector((state) => state.data);
+  const { allData } = useSelector((state) => state.data);
 
   const storedLoginDetails = JSON.parse(localStorage.getItem("reduxState"));
 
@@ -149,8 +153,12 @@ export default function Feed() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <FeedModel handleCloseModel={handleOpenModel} sendMessageToEdit={sendMessageToEdit} sendDateToEdit={sendDateToEdit} />
+        <Box className={styleForFeed.feedModelBox}>
+          <FeedModel
+            handleCloseModel={handleOpenModel}
+            sendMessageToEdit={sendMessageToEdit}
+            sendDateToEdit={sendDateToEdit}
+          />
         </Box>
       </Modal>
 
@@ -158,9 +166,9 @@ export default function Feed() {
         <div className={styleForFeed.textInHeader}>
           <div
             className={styleForFeed.logo}
-            style={{ 
-            background: "#ffc965" , 
-           }}
+            style={{
+              background: "#ffc965",
+            }}
             onMouseEnter={() => setdisplayHidden("block")}
             onMouseLeave={() => setdisplayHidden("none")}
           >
@@ -176,11 +184,35 @@ export default function Feed() {
             </div>
           </div>
 
-          <div style={{ fontSize: "20px", fontWeight: "500" , color:"#fff" , textTransform:"uppercase"  }}>
+          <div
+            style={{
+              fontSize: "20px",
+              fontWeight: "500",
+              color: "#fff",
+              textTransform: "uppercase",
+            }}
+          >
             {storedLoginDetails.loginDetails.name}
           </div>
-          <div style={{ fontSize: "20px", fontWeight: "500" , color:"#fff" }}>
-            <p>Current Date: {moment(date).format("DD MMM YYYY")}</p>
+          <div
+            style={{
+              fontSize: "20px",
+              fontWeight: "500",
+              color: "#fff",
+              display: "flex",
+              gap: "10px",
+              alignItems: "center",
+            }}
+          >
+            <p className={styleForFeed.currentDate}>
+              Current Date: {moment(date).format("DD MMM YYYY")}
+            </p>
+            <p>
+              <LogoutIcon
+                onClick={handleLogoutButton}
+                style={{ color: "red", paddingTop: "8px", cursor: "pointer" }}
+              />
+            </p>
           </div>
         </div>
       </div>
@@ -193,8 +225,8 @@ export default function Feed() {
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <p style={{ fontWeight: "600" , color:"#fff" }}>
-                    {moment(value.date , "DD/MM/YYYY").format("DD MMM YYYY")}
+                  <p style={{ fontWeight: "600", color: "#fff" }}>
+                    {moment(value.date, "DD/MM/YYYY").format("DD MMM YYYY")}
                   </p>
                   <div
                     style={{
@@ -213,7 +245,12 @@ export default function Feed() {
                     />
                   </div>
                 </div>
-                <Divider style={{ margin: "10px 0" , background:"rgb(255 255 255 / 12%)" }} />
+                <Divider
+                  style={{
+                    margin: "10px 0",
+                    background: "rgb(255 255 255 / 12%)",
+                  }}
+                />
                 <TextFieldData textData={value.content} />
               </div>
             );

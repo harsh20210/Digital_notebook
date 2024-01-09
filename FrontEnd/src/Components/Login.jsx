@@ -9,7 +9,6 @@ import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
-import gif from "./note-29363_960_720.webp";
 import {
   loginApi,
   registerApi,
@@ -124,6 +123,18 @@ export default function Login() {
     event.preventDefault();
   };
 
+  const handleBackToLoginPage = () => {
+    setOpenRegisterPage(!openRegisterPage); 
+    dispatch(error_message_while_gegistering(""));
+    dispatch(errorMessage(""));
+  }
+
+  const handleBackToRegister = () => {
+    setOpenRegisterPage(!openRegisterPage);
+    dispatch(errorMessage(""));
+    dispatch(error_message_while_gegistering(""))
+  }
+
   return (
     <>
       <div style={{ height: "100vh", overflow: "hidden" }}>
@@ -134,9 +145,10 @@ export default function Login() {
 
         <div className={loginStyle.loginContainer}>
           <div className={loginStyle.loginSecondContainer}>
+            <div className={loginStyle.forMobileOnly}>Digital Notebook</div>
+
             <div className={loginStyle.leftSide}>
               <p>Digital Notebook</p>
-              {/* <img src={gif}  style={{objectFit:"cover"}}/> */}
             </div>
 
             <div className={loginStyle.rightSide}>
@@ -219,7 +231,7 @@ export default function Login() {
                     </form>
                     <p
                       className={loginStyle.registerAndLoginText}
-                      onClick={() => setOpenRegisterPage(!openRegisterPage)}
+                      onClick={ handleBackToRegister }
                     >
                       Register
                     </p>
@@ -360,7 +372,7 @@ export default function Login() {
 
                     <p
                       className={loginStyle.registerAndLoginText}
-                      onClick={() => setOpenRegisterPage(!openRegisterPage)}
+                      onClick={ handleBackToLoginPage }
                     >
                       Back To Login
                     </p>
