@@ -45,6 +45,7 @@
 
   @media (max-width:600px) {
     flex-direction: column;
+    height: 75%;
   }
 }
 
@@ -260,7 +261,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block ;
+  display: block;
+  cursor: pointer;
 
   @media (max-width:600px) {
     width: 80%;

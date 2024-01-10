@@ -60,6 +60,7 @@ const TextFieldData = ({ textData }) => {
               ? styleForFeed.displayNone
               : styleForFeed.textDataBeforeCollapse
           }
+          onClick={() => setOpen(!open)}
         >
           {textData}
         </div>
