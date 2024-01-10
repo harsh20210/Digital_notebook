@@ -175,7 +175,6 @@ export const deleteApi = (payload) => (dispatch) => {
       }
     })
     .catch((e) => {
-      console.log("e?.response?.data?.message => " , e?.response?.data?.message)
       Swal.fire({
         icon: "error",
         title: `${e?.response?.data?.message}`,

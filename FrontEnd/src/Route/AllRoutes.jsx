@@ -1,6 +1,6 @@
 import { Route, Routes  } from "react-router-dom";
 import Login from "../Components/Login";
-import Feed from "../Components/Feed";
+import Feedpage from "../Page/Feedpage";
 
 function ErrorMessage() {
     return (
@@ -12,7 +12,7 @@ export default function AllRoutes() {
     return (
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/Feed" element={<Feed/>} />
+          <Route path="/Feed" element={<Feedpage/>} />
           <Route path="*" element={<ErrorMessage/>} />
         </Routes>
       );

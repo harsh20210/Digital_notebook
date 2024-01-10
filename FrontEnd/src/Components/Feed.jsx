@@ -135,7 +135,8 @@ export default function Feed() {
   const handleLogoutButton = () => {
     dispatch(
       logout({ email: storedLoginDetails.loginDetails.email }, () => {
-        navigate("/");
+        window.location.replace("/");
+        localStorage.clear();
       })
     );
   };

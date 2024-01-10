@@ -43,9 +43,6 @@ export default function FeedModel({
     }
   } , [sendDateToEdit] )
 
-  // console.log("setDateToDisplay => " , dateToDisplay);
-  console.log("dateToDisplay => " , dateToDisplay);
-
   const handleSubmitButton = () => {
     if (date !== null && textContent !== "") {
       dispatch(
